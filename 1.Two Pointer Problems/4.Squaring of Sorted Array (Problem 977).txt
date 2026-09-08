@@ -1,0 +1,25 @@
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+    int i=0;
+	    int n=nums.length;
+	    int j=n-1;
+	    int[] ans = new int[n];
+	    int id = n-1;
+	    while(i<=j){
+	        int sqr1 = nums[i]*nums[i];
+	        int sqr2 = nums[j]*nums[j];
+	        
+	        if(sqr1>sqr2){
+	            ans[id]=sqr1;
+	            id--;
+	            i++;
+	        }
+	        else{
+	            ans[id]=sqr2;
+	            id--;
+	            j--;
+	        }
+	    }
+	    return ans;
+    }
+}
